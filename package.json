@@ -1,6 +1,6 @@
 {
   "name": "@hudson-newey/conditional-match",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Adds support for a match() opperator with conditional matching",
   "main": "dist/index.js",
   "scripts": {
