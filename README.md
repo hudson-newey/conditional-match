@@ -1,12 +1,13 @@
 # Conditional Match
 
-"Lazily evaluated switch statements"
+"Lazily evaluated switch statements"  
+  
+This is me just testing NPM and is probably not good for use in production.
+
+## Examples
 
 ```ts
-import { match } from "../../dist/index.js";
-import { IMatchCondition, IMatchObject } from "../index.js";
-
-const conditions: IMatchCondition[] = [
+const conditions: MatchCondition[] = [
     {
         condition: (arg) => arg === 1,
         then: () => console.log("1"),
@@ -23,10 +24,55 @@ const conditions: IMatchCondition[] = [
     }
 ];
 
-const matchCondition: IMatchObject = {
+const matchCondition: MatchObject = {
     variable: 5,
     conditions
 };
 
 match(matchCondition);
+
+// Output:
+// not 1
+// not 2
+```
+
+## Default Statements
+
+```ts
+const conditions: MatchCondition[] = [
+    {
+        condition: (x: number) => number > 1,
+        then: () => console.log("hello world"),
+    },
+    {
+        condition: (x: any) => typeof x === "string",
+        then: () => console.log("incorrect input"),
+    },
+    {
+        default: () => console.log("bar");
+    }
+];
+
+match({ variable: "foo", conditions });
+
+// Output:
+// incorrect input
+// bar
+```
+
+## Singular Match Statement
+
+```ts
+const conditions: MatchCondition = {
+    condition: (x: number) => x > 10 && x < 999,
+    then: () => "yay!"
+};
+
+match({
+    variable: 100,
+    conditions
+});
+
+// Output:
+// yay!
 ```
