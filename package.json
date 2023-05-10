@@ -1,0 +1,14 @@
+{
+  "name": "conditional-match",
+  "version": "1.0.0",
+  "description": "Adds support for a match() opperator with conditional matching",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "node tests/dist/runTest.js"
+  },
+  "keywords": [
+    "match"
+  ],
+  "author": "hudson-newey",
+  "license": "MIT"
+}
