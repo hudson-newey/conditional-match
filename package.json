@@ -1,6 +1,6 @@
 {
-  "name": "conditional-match",
-  "version": "1.0.0",
+  "name": "@hudson-newey/conditional-match",
+  "version": "1.0.1",
   "description": "Adds support for a match() opperator with conditional matching",
   "main": "dist/index.js",
   "scripts": {
@@ -10,5 +10,16 @@
     "match"
   ],
   "author": "hudson-newey",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hudson-newey/conditional-match.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hudson-newey/conditional-match/issues"
+  },
+  "homepage": "https://github.com/hudson-newey/conditional-match#readme"
 }

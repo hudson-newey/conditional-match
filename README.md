@@ -1,3 +1,8 @@
+# Conditional Match
+
+"Lazily evaluated switch statements"
+
+```ts
 import { match } from "../../dist/index.js";
 import { IMatchCondition, IMatchObject } from "../index.js";
 
@@ -24,3 +29,4 @@ const matchCondition: IMatchObject = {
 };
 
 match(matchCondition);
+```

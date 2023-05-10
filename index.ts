@@ -5,6 +5,7 @@ type MatchExpression = (...args) => unknown;
 export interface IMatchObject {
     variable: MatchVariable;
     conditions: IMatchCondition[];
+    default?: MatchExpression;
 }
 
 export interface IMatchCondition {
@@ -19,12 +20,11 @@ export function match(matchCondition: IMatchObject) {
 
     conditions.forEach(condition => {
         if (!condition.condition(variable)) {
-            if (condition.else !== undefined) {
-                condition.else();
-            }
-            return;
+            condition?.else();
         } else {
             condition.then();
         }
     });
+
+    matchCondition?.default();
 }
