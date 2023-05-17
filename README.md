@@ -7,7 +7,7 @@ This is me just testing NPM and is probably not good for use in production.
 ## Examples
 
 ```ts
-const conditions: MatchCondition[] = [
+const conditions: Conditional[] = [
     {
         condition: (arg) => arg === 1,
         then: () => console.log("1"),
@@ -39,9 +39,9 @@ match(matchCondition);
 ## Default Statements
 
 ```ts
-const conditions: MatchCondition[] = [
+const conditions: Conditional[] = [
     {
-        condition: (x: number) => number > 1,
+        condition: (x: number) => x > 1,
         then: () => console.log("hello world"),
     },
     {
@@ -49,7 +49,7 @@ const conditions: MatchCondition[] = [
         then: () => console.log("incorrect input"),
     },
     {
-        default: () => console.log("bar");
+        default: () => console.log("bar")
     }
 ];
 
@@ -63,7 +63,7 @@ match({ variable: "foo", conditions });
 ## Singular Match Statement
 
 ```ts
-const conditions: MatchCondition = {
+const conditions: Conditional = {
     condition: (x: number) => x > 10 && x < 999,
     then: () => "yay!"
 };
@@ -75,4 +75,20 @@ match({
 
 // Output:
 // yay!
+```
+
+## Only a Default Match Statement
+
+```ts
+const conditions: Conditional = {
+    default: () => console.log("foo")
+};
+
+match({
+    variable: 100,
+    conditions
+});
+
+// output:
+// Foo
 ```
